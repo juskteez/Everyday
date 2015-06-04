@@ -3,6 +3,8 @@ Every designer should practice their skills, their potentials to be better. Inst
 
 So, I've made this to help you cast one less step on the way you practice your skills. Everyday will be a new color and new theme for you to start improving your creativity!
 
+### Visit the website at http://juskteez.github.io/everyday/
+
 If you have any ideas to improve this site, feel free to send me an email to vhuyphong@gmail.com
 
 Have a good time!

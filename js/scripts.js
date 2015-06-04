@@ -50,6 +50,11 @@ var colorOfTheDay = colorOfToday(), gColorA = colorOfToday(), gColorB = colorOfT
 			  "Triange"],
 	themeOfTheDay = themes[Math.floor(Math.random() * themes.length)];
 
+var dateObj = new Date();
+var month = dateObj.getUTCMonth() + 1;
+var day = dateObj.getUTCDate();
+var year = dateObj.getUTCFullYear();
+
 function setCookie(cname,cvalue,exdays) {
 	var d = new Date();
 	d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -71,24 +76,24 @@ function getCookie(cname) {
 }
 
 function checkCookie() {
-	var visit = getCookie("visit"),
+	var dateVisited = getCookie("dateVisited"),
 		hcolor = "",
 		selectTitle = "Click to select this color!";
-	if (visit === "visitedz") {
-		console.log('User visited!');
+
+	if (dateVisited == day) {
 		var color = getCookie("colorOfTheDay"),
 			ctype = getCookie("colorType"),
 			graCA = getCookie("gColorA"),
 			graCB = getCookie("gColorB"),
 			theme = getCookie("themeOfTheDay");
 	} else {
-		console.log('New user');
-		setCookie("visit", "visited", 1);
+		setCookie("dateVisited", day, 1);
 		setCookie("colorOfTheDay", colorOfTheDay, 1);
 		setCookie("colorType", colorType, 1);
 		setCookie("gColorA", gColorA, 1);
 		setCookie("gColorB", gColorB, 1);
 		setCookie("themeOfTheDay", themeOfTheDay, 1);
+		console.log('Cookied!');
 
 		var color = colorOfTheDay,
 			ctype = colorType,
@@ -100,12 +105,12 @@ function checkCookie() {
 	/* Set background color */
 	if (ctype == 1) {
 		color = color;
-		hcolor = "<b id='graCA'>" + color + "</b>";
+		hcolor = "<b id='graCA' data-clipboard-text='Copy Me!'>" + color + "</b>";
 		document.getElementById("body").style.backgroundColor = color;
 	} else {
 		var graCSS = "background: " + graCA + "; background: -moz-linear-gradient(top,  " + graCA + " 0%, " + graCB + " 100%); background: -webkit-gradient(linear, left top, left bottom, color-stop(0%," + graCA + "), color-stop(100%," + graCB + ")); background: -webkit-linear-gradient(top,  " + graCA + " 0%," + graCB + " 100%); background: -o-linear-gradient(top,  " + graCA + " 0%," + graCB + " 100%); background: -ms-linear-gradient(top,  " + graCA + " 0%," + graCB + " 100%); background: linear-gradient(to bottom,  " + graCA + " 0%," + graCB + " 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='" + gColorA + "', endColorstr='" + graCB + "',GradientType=0 );",
 			color = graCA,
-			hcolor = "<b id='graCA'>" + graCA + "</b><span>, </span><b id='graCB'>" + graCB + "</b>";
+			hcolor = "<b id='graCA' data-clipboard-text='Copy Me!'>" + graCA + "</b><span>, </span><b id='graCB'>" + graCB + "</b>";
 		document.getElementById("body").setAttribute("style", graCSS);
 	}
 	document.getElementById("back").style.backgroundColor = color;
@@ -129,8 +134,8 @@ function selectText(containerid) {
 }
 document.onclick = function(e) {
 	document.getElementById("graCA").className = "";
-	if (colorType === 2) {document.getElementById("graCB").className = "";}
-	if (e.target.id === 'graCA' || e.target.id === 'graCB') {
+	if (colorType == 2) {document.getElementById("graCB").className = "";}
+	if (e.target.id == 'graCA' || e.target.id == 'graCB') {
 		selectText(e.target.id);
 		e.target.className = "selected";
 	}

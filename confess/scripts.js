@@ -1,21 +1,21 @@
-var themes = ["Không",
-			  "Không",
-			  "Không",
-			  "Không",
-			  "Không",
-			  "Không",
-			  "Không",
-			  "Không",
-			  "Không",
-			  "Không",
-			  "Không",
-			  "Không",
-			  "Không",
-			  "Có",
-			  "Không",
-			  "Không",
-			  "Không",
-			  "Không"],
+var themes = ["Không!",
+			  "Không!",
+			  "Không!",
+			  "Không!",
+			  "Không!",
+			  "Không!",
+			  "Không!",
+			  "Không!",
+			  "Không!",
+			  "Không!",
+			  "Không!",
+			  "Không!",
+			  "Không!",
+			  "Có!",
+			  "Không!",
+			  "Không!",
+			  "Không!",
+			  "Không!"],
 	confessOrNot = Math.floor(Math.random() * themes.length);
 
 var dateObj = new Date();
@@ -58,7 +58,7 @@ function checkCookie() {
 	}
 
 	/* Show theme color */
-	if (themes[confessOrNot] == "Có") {
+	if (themes[confessOrNot] == "Có!") {
 		theColor = '#fa93ab';
 	} else {
 		theColor = '#aaa';

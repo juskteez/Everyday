@@ -22,7 +22,7 @@ var themes = ["Bia",
 			  "#543b1f",
 			  "#c6e8f5",
 			  "#eee",
-			  "#ffffff",
+			  "#aaa",
 			  "#1f1913"],
 	whatToDrinkToday = Math.floor(Math.random() * themes.length);
 

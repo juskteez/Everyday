@@ -3,11 +3,11 @@
 html, body, #wrapped, #body {height: 100%;position: relative;}
 
 #question, #question:before, #question:after, #aboutthis, #body li, footer {
-	-webkit-transition: 0.6s cubic-bezier(.77,-0.32,.25,1.01) all;
-	   -moz-transition: 0.6s cubic-bezier(.77,-0.32,.25,1.01) all;
-	    -ms-transition: 0.6s cubic-bezier(.77,-0.32,.25,1.01) all;
-	     -o-transition: 0.6s cubic-bezier(.77,-0.32,.25,1.01) all;
-	        transition: 0.6s cubic-bezier(.77,-0.32,.25,1.01) all;
+	-webkit-transition: 0.6s cubic-bezier(.77,.15,.48,1.38) all;
+	   -moz-transition: 0.6s cubic-bezier(.77,.15,.48,1.38) all;
+	    -ms-transition: 0.6s cubic-bezier(.77,.15,.48,1.38) all;
+	     -o-transition: 0.6s cubic-bezier(.77,.15,.48,1.38) all;
+	        transition: 0.6s cubic-bezier(.77,.15,.48,1.38) all;
 }
 
 body {

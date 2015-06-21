@@ -1,0 +1,36 @@
+* {text-decoration: none;padding: 0;margin: 0;border:none;box-sizing: border-box;-moz-box-sizing: border-box;}
+.clear, [clearf] {clear: both;} .right {float: right;} .left {float: left;} .nodis, [nodis] {display: none;} ul {list-style: none;}
+html, body {height: 100%;}
+
+body {
+	font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+	font-weight: 900;
+	font-size: 14px;
+}
+#body {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+#confess {
+	position: fixed;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	font-size: 48px;
+	height: 60px;
+	line-height: 60px;
+	margin-top: -30px;
+	text-align: center;
+	color: #fff;
+}
+#confess:before {
+	content: "Hôm nay có tỏ tình không?";
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	bottom: 100%;
+	font-size: 18px;
+	left: 0;
+}

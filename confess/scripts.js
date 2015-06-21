@@ -1,22 +1,4 @@
-var themes = ["Không!",
-			  "Không!",
-			  "Không!",
-			  "Không!",
-			  "Không!",
-			  "Không!",
-			  "Không!",
-			  "Không!",
-			  "Không!",
-			  "Không!",
-			  "Không!",
-			  "Không!",
-			  "Không!",
-			  "Có!",
-			  "Không!",
-			  "Không!",
-			  "Không!",
-			  "Không!"],
-	confessOrNot = Math.floor(Math.random() * themes.length);
+var confessOrNot = Math.floor(Math.random() * 100);
 
 var dateObj = new Date();
 var month = dateObj.getUTCMonth() + 1;
@@ -44,7 +26,9 @@ function getCookie(cname) {
 }
 
 function checkCookie() {
-	var dateVisited = getCookie("dateVisited");
+	var dateVisited = getCookie("dateVisited"),
+		theAnswer = '',
+		theColor = '';
 	console.log('Checking Cookie!');
 
 	if (dateVisited == day) {
@@ -58,14 +42,15 @@ function checkCookie() {
 	}
 
 	/* Show theme color */
-	if (themes[confessOrNot] == "Có!") {
+	if (confessOrNot > 80) {
+		theAnswer = 'Có!';
 		theColor = '#fa93ab';
 	} else {
+		theAnswer = 'Không!';
 		theColor = '#aaa';
 	}
 	document.getElementById("body").style.backgroundColor = theColor;
-
 	
 	/* Show Random theme */
-	document.getElementById('confess').innerHTML = themes[confessOrNot];
+	document.getElementById('confess').innerHTML = theAnswer;
 }
